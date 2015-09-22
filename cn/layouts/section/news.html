@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if !IE] -->
+<html lang='en'>
+<!-- <![endif] -->
+{{ partial "head.html" . }}
+
+<body class='index'>
+  <div id='wrapper'>
+    {{ partial "header.html" . }}
+    <div id='main' role='main'>
+      <div id='main-content'>
+        <div class="container">
+          <div class="row" id="portfolio-filter">
+            <div class="col-sm-12">
+              <ul class="nav nav-pills">
+                <li class="active"><a data-filter="*" href="#">All</a>
+                </li>
+                <li><a data-filter=".portfolio-filter-project_news" href="#">Project News</a>
+                </li>
+                <li><a data-filter=".portfolio-filter-follow_bi" href="#">Follow BI</a>
+                </li>
+                <li><a data-filter=".portfolio-filter-fudan_culture" href="#">Fudan Culture</a>
+                </li>
+                <li><a data-filter=".portfolio-filter-norweigian_style" href="#">Norweigian Style</a>
+                </li>
+                <li><a data-filter=".portfolio-filter-join_and_share" href="#">Join & Share</a>
+                </li>
+                <li><a data-filter=".portfolio-filter-student_activities" href="#">Student Activities</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row info-boxes" id="portfolio-container">
+            {{ range .Data.Pages }} {{ if eq .Type "news"}}
+            <div class="col-sm-6 info-box portfolio-item portfolio-filter-{{ .Params.filter }} isotope-item">
+              <a href="{{ .RelPermalink }}">
+                <div class="image-link">
+                  <i class="fa fa-search"></i>
+                  <img class="img-responsive img-rounded center-block" alt="..." width="585" height="382" src="http://greatcarrot.com/fudan/images/{{ .Params.image }}">
+                </div>
+                <h3 class="title">{{ .Title }}</h3>
+                <p class="category">{{ .Params.category }}</p>
+              </a>
+            </div>
+            {{ end }} {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #scroll to top -->
+    <div class='fade' id='scroll-to-top'>
+      <i class='fa fa-chevron-up'></i>
+    </div>
+    <!-- / #scroll to top -->
+  </div>
+  <!-- / #main -->
+  {{ partial "footer.html" . }}
+  <!-- / #wrapper -->
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

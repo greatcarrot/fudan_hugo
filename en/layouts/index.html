@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if !IE] -->
+<html lang='en'>
+<!-- <![endif] -->
+{{ partial "head.html" . }}
+
+<body class='index'>
+  <div id='wrapper'>
+    {{ partial "header.html" . }}
+    <div id='main' role='main'>
+      <div id='main-content' class="home">
+        <div class='container'>
+          <!-- The Best of Both -->
+          <div class='row' style="margin-top:80px;display:none;">
+            <div class='col-sm-8 col-sm-offset-2'>
+              <img alt="The Best of Both" class="img-responsive img-rounded center-block margin-20" alt="..." width="..." height="..." src="/images/start.jpg">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-header page-header-with-icon">
+                <!-- icon -->
+                <i class="fa fa-university"></i>
+                <h2>
+                  <span style="font-family: 'TradeGothicLTStd-BdCn20';">The Best of Both</span>
+                  <small>English Taught Nordic - Chinese MBA program. Ranked globally as the no. 8 part-time MBA program by Financial Times, 2014.</small>
+                </h2>
+              </div>
+              <div class='row'>
+                <div class='col-sm-12'>
+                  <ul class='circle-stats'>
+                    <li class='circle-stat-small'>
+                      <div class='circle-stat-wrapper'>
+                        <input class='hidden' data-fgColor='#00467E' data-readOnly='true' data-stat='circle' data-thickness='0.1' type='text' value='92.4'>
+                        <p class='percent'>92.4%</p>
+                      </div>
+                      <h3 class='title'>Share of students working in Foreign Invested Companies</h3>
+                      <p class='description'>Nulla non interdum sem. Vestibulum is varius fermentum auctor praesent.</p>
+                    </li>
+                    <li class='circle-stat-small'>
+                      <div class='circle-stat-wrapper'>
+                        <i class="fa fa-flag" style="color: #00467E; font-size:64px; height:80px; margin-top:5px;"></i>
+                      </div>
+                      <h3 class='title'>11.6 YEARS Average work experience</h3>
+                      <p class='description'>Phasellus et scelerisque justo, et ultrices sem imperdiet eu. Maecenas lacinia leo.</p>
+                    </li>
+                    <li class='circle-stat-small'>
+                      <div class='circle-stat-wrapper'>
+                        <input class='hidden' data-fgColor='#00467E' data-readOnly='true' data-stat='circle' data-thickness='0.1' type='text' value='75'>
+                        <p class='percent'>75%</p>
+                      </div>
+                      <h3 class='title'>International faculty</h3>
+                      <p class='description'>Nulla non interdum sem. Vestibulum is varius fermentum auctor praesent.</p>
+                    </li>
+                    <li class='circle-stat-small'>
+                      <div class='circle-stat-wrapper'>
+                        <i class="fa fa-globe " style="color: #00467E; font-size:72px; height:80px; margin-top:5px;"></i>
+                      </div>
+                      <h3 class='title'>5 Campuses</h3>
+                      <p class='description'>Shanghai, Berkeley, Singapore, Madrid, Oslo.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / The Best of Both -->
+          <!-- News and Events -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="page-header page-header-with-icon">
+                <!-- icon -->
+                <i class="fa fa-newspaper-o"></i>
+                <h2>Latest News</h2>
+              </div>
+              <div class="row info-boxes">
+                {{ range first 4 (where .Data.Pages "Section" "news") }} {{ if eq .Type "news"}}
+                <div class="col-sm-6 info-box portfolio-item">
+                  <a href="{{ .RelPermalink}}">
+                    <div class="image-link">
+                      <i class="fa fa-search"></i>
+                      <img class="img-responsive img-rounded center-block" alt="..." width="..." height="..." src="http://greatcarrot.com/fudan/images/{{ .Params.thumbnail }}">
+                    </div>
+                    <h3 class="title">{{ .Title }}</h3>
+                    <p class="category">{{ .Params.category }}</p>
+                  </a>
+                </div>
+                {{ end }} {{ end }}
+              </div>
+              <!-- ROW OF INFO BOXES -->
+            </div>
+            <!-- end news-->
+            <!-- Events -->
+            <div class="col-sm-6">
+              <div class="page-header page-header-with-icon">
+                <!-- icon -->
+                <i class="fa fa-calendar"></i>
+                <h2>Upcoming Events</h2>
+              </div>
+              <!-- start events -->
+              <div class="event-boxes">
+                {{ range first 5 (where .Data.Pages "Section" "events") }} {{ if eq .Type "events"}}
+                <div class="row">
+                  <!-- should we put them all in one row -->
+                  <div class="col-sm-12 event-box">
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2">
+                        <a class="event-thumbnail" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Params.month }}
+                          <span>{{ .Params.day }}</span>
+                        </a>
+                      </div>
+                      <div class="col-sm-9 col-md-10 ">
+                        <h3 class="name">
+                          <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }} - {{ .Params.location }}</a>
+                        </h3>
+                        <h4 class="position">{{ .Params.month }} {{ .Params.day }} - {{ .Params.time }}</h4>
+                        <p>{{ .Description }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{ end }} {{ end }}
+              </div>
+              <!-- end events .event-boxes-->
+            </div>
+          </div>
+          <!-- / News and Events -->
+          <!-- Quotes -->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-header page-header-with-icon">
+                <!-- icon -->
+                <i class="fa fa-graduation-cap"></i>
+                <h2>Students Quotes</h2>
+              </div>
+              <div class="row quotes">
+                <div class="carousel carousel-default slide carousel-auto" id="carousel-testimonials">
+                  <div class="carousel-inner">
+                    <div class="item quote active">
+                      <div class="col-sm-12 text-center">
+                        <p class="lead">Better understanding of past, smarter investment in future. 【完成任明川教授的’Financial Accounting’课程后的总结】</p>
+                        <div class="author-wrapper">
+                          <p class="author">
+                            <strong>MBA20</strong>魏江洲 Jon Wei
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item quote">
+                      <div class="col-sm-12 text-center">
+                        <p class="lead">No pain, no gain. Thinking the meaning of life is more important than “life performance". Enjoy your study and enjoy your life. (完成Hanno Roberts教授的’Organizational Management and Control’课程后的感悟)</p>
+                        <div class="author-wrapper">
+                          <p class="author">
+                            <strong>MBA23</strong> 刘慧梅
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item quote">
+                      <div class="col-sm-12 text-center">
+                        <p class="lead">I still believe that taking MBA is a journey to find another me.</p>
+                        <div class="author-wrapper">
+                          <p class="author">
+                            <strong>MBA19</strong> 刘德星
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item quote">
+                      <div class="col-sm-12 text-center">
+                        <p class="lead">时光搭成彩虹桥，装点出每一次相聚的美好。 感谢两年来所有的支持、相遇与坚持。【挪威毕业旅行和毕业典礼中的感言】</p>
+                        <div class="author-wrapper">
+                          <p class="author">
+                            <strong>MBA20</strong> 许璇
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item quote">
+                      <div class="col-sm-12 text-center">
+                        <p class="lead">这是一个即有欧洲商学院的学院气，又有美式MBA的实战活力，加上复旦式严谨的项目。不容错过。</p>
+                        <div class="author-wrapper">
+                          <p class="author">
+                            <strong>MBA10</strong> 万众
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item quote">
+                      <div class="col-sm-12 text-center">
+                        <p class="lead">实践需要理论的指导，若理论无法正确指导实践，那就需要你的创新。看看教授们的新思维！</p>
+                        <div class="author-wrapper">
+                          <p class="author">
+                            <strong>MBA17</strong> 朱嵘
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel-testimonials" class="active"></li>
+                    <li data-slide-to="1" data-target="#carousel-testimonials"></li>
+                    <li data-slide-to="2" data-target="#carousel-testimonials"></li>
+                    <li data-slide-to="3" data-target="#carousel-testimonials"></li>
+                    <li data-slide-to="4" data-target="#carousel-testimonials"></li>
+                    <li data-slide-to="5" data-target="#carousel-testimonials"></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / End Quotes -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div class='page-header page-header-with-icon'>
+                <i class='fa fa-file-movie-o'></i>
+                <h2>Podcasts</h2>
+              </div>
+              <div class="video-container" style="width:100%;height:100%;max-width:1000px">
+                <video width="100%" height="100%" id="player1" controls="controls" preload="metadata">
+                  <source src="/images/echo-hereweare.mp4" type="video/mp4" />
+                </video>
+                <p>Please Enjoy this Podcast or <a href="/images/echo-hereweare.mp4">Download Here</a>
+                </p>
+                <p><a href="#/news/category/videos/">View All Videos</a>
+                </p>
+              </div>
+              <div class="audio-container">
+                <audio width="100%" height="100%" id="player2" src="http://greatcarrot.com/fudan/images/8user48736353001-22-gak-bass.mp3" preload="none" type="audio/mp3" controls="controls">
+                  <p>Your browser leaves much to be desired.</p>
+                </audio>
+                <p>Please Enjoy this Podcast or <a href="http://greatcarrot.com/fudan/images/8user48736353001-22-gak-bass.mp3">Download Here</a>
+                </p>
+                <p><a href="#/news/category/audio/">View All Audio</a>
+                </p>
+              </div>
+            </div>
+            <!-- Podcasts -->
+            <div class="col-sm-6">
+              <div class='page-header page-header-with-icon'>
+                <i class='fa fa-users'></i>
+                <h2>Student Profiles</h2>
+              </div>
+              <div class='profile-boxes'>
+                <div class='row'>
+                  <div class="col-sm-12 profile-box">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <a class="image-link" href="/students/student_1/" title="Max MAO 毛应波 (China)">
+                          <i class="fa fa-search"></i>
+                          <img alt="Max MAO 毛应波 (China)" width="165" height="165" src="http://greatcarrot.com/fudan/images/Student_1.jpg">
+                        </a>
+                      </div>
+                      <div class="col-sm-8">
+                        <h3 class="name">
+                          <a href="/students/student_1/" title="Max MAO 毛应波 (China)">Max MAO 毛应波 (China)</a>
+                        </h3>
+                        <h4 class="position">BI-Fudan MBA Class 19</h4>
+                        <p class="truncate">BI-Fudan MBA program is a prestigious milestone to me with a fruitful and pleasant journey.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 profile-box">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <a class="image-link" href="/students/student_2/" title="Hui Chen Fei (Malaysia)">
+                          <i class="fa fa-search"></i>
+                          <img alt="Student Name 4" width="165" height="165" src="http://greatcarrot.com/fudan/images/Student_2.jpg">
+                        </a>
+                      </div>
+                      <div class="col-sm-8">
+                        <h3 class="name">
+                          <a href="/students/student_2/" title="Hui Chen Fei (Malaysia)">Hui Chen Fei (Malaysia)</a>
+                        </h3>
+                        <h4 class="position">BI-Fudan MBA Class 18</h4>
+                        <p class="truncate">The program has been insightful, and more importantly, very stimulating to my thought process.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- PROFILE BOXES -->
+            </div>
+            <!-- Students -->
+          </div>
+          <!-- ROW-->
+        </div>
+      </div>
+      <!-- #scroll to top -->
+      <div class='fade' id='scroll-to-top'>
+        <i class='fa fa-chevron-up'></i>
+      </div>
+      <!-- / #scroll to top -->
+    </div>
+    <!-- / #main -->
+    {{ partial "footer.html" . }}
+  </div>
+  <!-- / #wrapper -->
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

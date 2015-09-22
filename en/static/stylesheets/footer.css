@@ -1,0 +1,187 @@
+/*------------------------------------*\
+	$FOOTER
+\*------------------------------------*/
+
+#footer #footer-main {
+	padding: 50px 0;
+	background-color: #00467E;
+	text-align: center; 
+}
+@media (min-width: 768px) {
+
+	#footer #footer-main {
+		text-align: left; 
+	} 
+}
+#footer #footer-main .fa, #footer #footer-main .fa {
+	color: #FFF;
+	font-size: 15px;
+	margin-top: 2px;
+}
+#footer #footer-main .title {
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin: 0 0 25px 0; 
+	font-weight: normal;
+}
+#footer #footer-main .info-box {
+	margin-top: 50px;
+}
+#footer #footer-main .info-box:first-child {
+	margin-top: 0;
+}
+@media (min-width: 768px) {
+	#footer #footer-main .info-box:nth-child(2) {
+		margin-top: 0; 
+	} 
+}
+@media (min-width: 992px) {
+	#footer #footer-main .info-box {
+		margin-top: 0; 
+	} 
+}
+
+#footer #footer-main .info-box a {
+	color: white; 
+}
+#footer #footer-main .info-box a:hover {
+	color: white; 
+}
+@media (max-width: 767px) {
+	#footer #footer-main .info-box .icon-box .icon {
+		margin-top: 20px;
+		margin-bottom: 10px; 
+	}
+	#footer #footer-main .info-box .icon-box .icon:first-child {
+		margin-top: 0; 
+	} 
+}
+
+#footer #footer-main .info-box .icon-box .icon .fa, #footer #footer-main .info-box .icon-box .icon .fa {
+	font-size: 22px; 
+}
+@media (min-width: 768px) {
+	#footer #footer-main .info-box .icon-box .icon .fa, #footer #footer-main .info-box .icon-box .icon .fa {
+		font-size: 15px; 
+	} 
+}
+
+#footer #footer-main .info-box.social-box .time {
+	color: #717e90; 
+}
+#footer #footer-main .info-box .logo-container {
+	height: 55px;
+	max-height: 55px;
+}
+#footer #footer-main .image-list-box > li > a img {
+
+}
+#footer #footer-main .image-list-box > li > a img:hover {
+
+}
+#footer #footer-main .button-cloud-box .btn-bordered {
+	margin-bottom: 10px;
+	font-weight: normal;
+}
+#footer #footer-main form {
+	  margin-top: 25px;
+	  max-width: 320px;
+	  margin-left: auto;
+	  margin-right: auto;
+}
+#footer #footer-main form .fa, #footer #footer-main form .fa {
+	display: inline-block;
+	-webkit-transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	transform: scaleX(-1); 
+}
+#footer #footer-main form .form-group {
+	padding-right: 0; 
+}
+#footer #footer-main form .form-control {
+	background-color: #FFF;
+	border-color: #FFF;
+	color: #333;
+}
+#footer #footer-main form .form-control:-moz-placeholder {
+		color: #333;
+}
+#footer #footer-main form .form-control:-ms-input-placeholder {
+		color: #333;
+}
+#footer #footer-main form .form-control::-webkit-input-placeholder {
+		color: #333;
+}
+#footer #footer-main form .form-control:focus {
+		-webkit-box-shadow: 0 0 8px rgba(141, 193, 83, 0.6);
+		-moz-box-shadow: 0 0 8px rgba(141, 193, 83, 0.6);
+		box-shadow: 0 0 8px rgba(141, 193, 83, 0.6);
+}
+#footer #footer-main form .btn {
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+#footer #footer-main .info-box, #footer #footer-main ul, #footer #footer-main p, #footer #footer-main ol, #footer #footer-main ul li, #footer #footer-main ol li {
+	color: #FFF;
+}
+#footer #footer-main p {
+	font-size: 14px;
+	line-height: 24px;
+}
+#footer #footer-main ul, #footer #footer-main ol {
+	margin-bottom: 0;
+}
+#footer #footer-main .list-group {
+
+}
+#footer #footer-main .list-group .list-group-item {
+	position: relative;
+	display: block;
+	padding: 0;
+	margin-bottom: 15px;
+	background-color: transparent;
+	border: none;
+}
+#footer #footer-main .list-group .list-group-item:first-child {
+	-moz-border-radius-topleft: 0px;
+	-webkit-border-top-left-radius: 0px;
+	border-top-left-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	-webkit-border-top-right-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+#footer #footer-copyright {
+	background-color: #003366;
+	color: #FFF;
+	padding: 20px 0;
+	text-align: center;
+}
+@media (min-width: 768px) {
+	#footer #footer-copyright {
+		text-align: left;
+	}
+}
+#footer #footer-copyright .copyright {
+	margin: 5px 0 0 0;
+}
+@media (min-width: 768px) {
+	#footer #footer-copyright .copyright {
+		float: left;
+	}
+}
+#footer #footer-copyright .links {
+	margin-top: 20px;
+}
+@media (min-width: 768px) {
+	#footer #footer-copyright .links {
+		float: right;
+		margin-top: 0;
+	}
+	#footer #footer-copyright .links .btn {
+		margin-left: 5px; 
+	}
+}

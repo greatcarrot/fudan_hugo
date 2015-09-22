@@ -1,0 +1,88 @@
+<div class="col-sm-4">
+  <div class="sidebar">
+    <button class="btn btn-block sidebar-toggle" data-target=".sidebar-collapse" data-toggle="collapse" type="button">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="sidebar-collapse collapse">
+      <div class="box">
+        <h2 class="title">MBA Program</h2>
+        <ul class="list-group">
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../about/main.html'>About</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../about/curriculum.html'>Curriculum</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../professors.html'>Professors & Research</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../students.html'>Student Life</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../about/campus.html'>Campus</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../about/expenses_and_financial_aid.html'>Tuition Fee</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../about/schools_cooperated.html'>Schools Incorporated</a>
+          </li>
+          <li class='list-group-item'><i class="fa fa-angle-right fa fa-fixed-width"></i>
+            <a href='../about/f_a_q.html'>F.A.Q</a>
+          </li>
+        </ul>
+      </div>
+      {{ if eq .Title "F.A.Q" }}
+      <div class="box kristian">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="title">Ask A Question</h2>
+            <form class="form form-validation form-contact" method="post" novalidate="novalidate">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="alert alert-success form-contact-success hidden">Thanks! Your message has been successfully sent!</div>
+                  <div class="alert alert-danger form-contact-error hidden">Ooops! There was an error sending your message.</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group control-group">
+                    <input class="form-control" data-rule-required="true" name="name" placeholder="Name" type="text">
+                    <!-- / this field is required for simple anti spam function, don't remove it! -->
+                    <input class="form-control" name="human" placeholder="Are you human?" style="display: none;" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group control-group">
+                    <input class="form-control" data-rule-email="true" data-rule-required="true" name="email" placeholder="E-Mail" type="email">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group control-group">
+                    <textarea class="form-control" data-rule-required="true" name="message" placeholder="Your message..."></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <button class="btn btn-contrast btn-block form-contact-submit" data-loading-text="&lt;i class='fa fa fa-refresh fa fa fa-spin'&gt;&lt;/i&gt; Sending..." type="submit">Send message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <!-- sidebar-collapse -->
+  </div>
+</div>
+<!-- end sidebar -->

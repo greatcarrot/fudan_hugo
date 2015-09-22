@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if !IE] -->
+<html lang='en'>
+<!-- <![endif] -->
+{{ partial "head.html" . }}
+
+<body class='index'>
+  <div id='wrapper'>
+    {{ partial "header.html" . }}
+    <div id='main' role='main'>
+      <div id='main-content'>
+        <div class="container">
+          <div class='row'>
+            {{ partial "about-sidebar.html" . }}
+            <div class='col-sm-6'>
+              <div class='text-boxes'>
+                <div class='row text-box'>
+                  <div class='col-sm-12'>
+                    <h1 class='title'>We don't think alike</h1>
+                    <p>Our faculty consists of professors and experts with a very varied background and specialties, and they will bring different perspectives to the classroom. What they have in common, is their dedication to our MBA program and a desire to continuously develop the program together with the students.</p>
+                    <p>75% of the faculty are international, and most of them have been teaching in China for more than 10 years which portend a cultural relativistic approach and ensure that the international faculty is highly competent in teaching in China.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- .text-boxes -->
+            </div>
+          </div>
+          <!-- .col -->
+          <div class='row'>
+            <div class='col-sm-12'>
+              <div class='page-header page-header-with-icon'>
+                <i class='fa fa-users'></i>
+                <h2>Faculty</h2>
+              </div>
+              <div class='profile-boxes'>
+                <div class='row'>
+                  {{ range .Data.Pages }} {{ if eq .Type "professors"}}
+                  <div class='col-sm-6 profile-box'>
+                    <div class='row'>
+                      <div class='col-sm-4'>
+                        <a class="image-link" href='{{ .RelPermalink }}' title='{{ .Title }}'>
+                          <i class='fa fa-search'></i>
+                          <img alt="{{ .Title }}" width="165" height="165" src="http://greatcarrot.com/fudan/images/{{ .Params.thumb }}" />
+                        </a>
+                      </div>
+                      <div class='col-sm-8'>
+                        <h3 class='name'>
+                          <a href='{{ .RelPermalink }}' title='{{ .Title }}'>{{ .Title }}</a>
+                        </h3>
+                        <h4 class='position'>{{ .Params.position }}</h4>
+                        <p class="truncate">{{ .Description }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.profile-box -->
+                  {{ end }} {{ end }}
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.profile-boxes -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #scroll to top -->
+    <div class='fade' id='scroll-to-top'>
+      <i class='fa fa-chevron-up'></i>
+    </div>
+    <!-- / #scroll to top -->
+  </div>
+  <!-- / #main -->
+  {{ partial "footer.html" . }}
+  <!-- / #wrapper -->
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<div id="universal-banner">
+  <div class="container">
+    <div class="logo">
+      <a title="Home" class="logo-inner" href="#">Home</a>
+    </div>
+    {{ partial "header-search-form.html" . }}
+    <div id="language-link">
+      <ul>
+        <li>
+          <a title="EN" class="en" href="#">
+            <img src="http://greatcarrot.com/fudan/images/en.png">
+          </a>
+        </li>
+        <li>
+          <a title="ZH" class="zh" href="#">
+            <img src="http://greatcarrot.com/fudan/images/zh.png">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<header id="header">
+  <div class='background'></div>
+  <div class='container'>
+    {{ partial "header-navigation.html" . }} {{ if eq .Title "Fudan University" }} {{ partial "header-slide-show.html" . }} {{ else }} {{ partial "header-content.html" . }} {{ end }}
+  </div>
+  <!-- .container -->
+</header>

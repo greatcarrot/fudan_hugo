@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if !IE] -->
+<html lang='en'>
+<!-- <![endif] -->
+{{ partial "head.html" . }}
+
+<body class='index'>
+  <div id='wrapper'>
+    {{ partial "header.html" . }}
+    <div id='main' role='main'>
+      <div id='main-content'>
+        <div class="container">
+          <div class='row'>
+            {{ partial "about-sidebar.html" . }}
+            <div class='col-sm-6'>
+              <div class='text-boxes'>
+                <div class='row text-box'>
+                  <div class='col-sm-12'>
+                    <h1 class='title'>No Pain No Gain</h1>
+                    <p>To be a student at the BI-Fudan MBA program is an inspection of your abilities to manage a hectic day whilst achieving desired results in your professional, personal and academic life.</p>
+                    <p>As a student, you will meet your peers from Thursday to Sunday approximately once every month. It is required that the student are well prepared for the courses and actively participate in classroom discussions and groups works. Some courses obligate the students to conduct pre- and post-course assignments. However, the preparation for each class seldom start earlier than two weeks prior to the class.</p>
+                    <p><a href="#">Click here to see the latest class schedule</a>
+                    </p>
+                    <p>We strive for our students to have a life long experience that creates memories of overcoming barriers, developing a new mind-set, but also enjoyment, amusement and fun. You will get new friends that often lasts for a lifetime, and we foster such environment by organizing social events all year long</p>
+                    <p>Read about our latest events <a href="/events/">here</a>
+                    </p>
+                    <h3>Join&Share</h3>
+                    <p>Upon acceptance to our program, you also become a member of our alumni organization, Join&Share. Join&Share holds in-excess of 2000 members, all alumni from the BI-Fudan MBa program.</p>
+                    <p>Read more about Join&Share <a href="#">here</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- .text-boxes -->
+            </div>
+          </div>
+          <!-- .col -->
+          <div class='row'>
+            <div class='col-sm-12'>
+              <div class='page-header page-header-with-icon'>
+                <i class='fa fa-users'></i>
+                <h2>Student Profiles</h2>
+              </div>
+              <div class='profile-boxes'>
+                <div class='row'>
+                  {{ range .Data.Pages }} {{ if eq .Type "students"}}
+                  <div class='col-sm-6 profile-box'>
+                    <div class='row'>
+                      <div class='col-sm-4'>
+                        <a class="image-link" href='{{ .RelPermalink }}' title='{{ .Title }}'>
+                          <i class='fa fa-search'></i>
+                          <img alt="{{ .Title }}" width="165" height="165" src="http://placehold.it/165x165" />
+                        </a>
+                      </div>
+                      <div class='col-sm-8'>
+                        <h3 class='name'>
+                          <a href='{{ .RelPermalink }}' title='{{ .Title }}'>{{ .Title }}</a>
+                        </h3>
+                        <h4 class='position'>{{ .Params.position }}</h4>
+                        <p class="truncate">{{ .Description }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.profile-box -->
+                  {{ end }} {{ end }}
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.profile-boxes -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #scroll to top -->
+    <div class='fade' id='scroll-to-top'>
+      <i class='fa fa-chevron-up'></i>
+    </div>
+    <!-- / #scroll to top -->
+  </div>
+  <!-- / #main -->
+  {{ partial "footer.html" . }}
+  <!-- / #wrapper -->
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

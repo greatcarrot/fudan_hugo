@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if !IE] -->
+<html lang='en'>
+<!-- <![endif] -->
+{{ partial "head.html" . }}
+
+<body class='index'>
+  <div id='wrapper'>
+    {{ partial "header.html" . }}
+    <div id='main' role='main'>
+      <div id='main-content'>
+        <div class="container">
+          <div class="row lead text-center">
+            <div class="col-sm-12">
+              <p class="no-mg-b">Quisque nunc sapien, malesuada vitae luctus in, blandit eu erat. Cras fringilla eros eget justo dictum convallis.</p>
+            </div>
+          </div>
+          <div class="row">
+            <!-- EACH IN ITS OWN ROW-->
+            <div class="col-md-4">
+              <div class="">
+                <div class="page-header page-header-with-icon">
+                  <!-- icon -->
+                  <i class="fa fa-calendar"></i>
+                  <h2>Events</h2>
+                </div>
+                <!-- EACH IN ITS OWN ROW-->
+                <div class="row">
+                  <div class="col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0">
+                    <div class="event-calendar">
+                      <header>
+                        <button>«</button>
+                        <h3>July 2015</h3>
+                        <button>»</button>
+                      </header>
+                      <table class="">
+                        <tr>
+                          <td>S</td>
+                          <td>M</td>
+                          <td>T</td>
+                          <td>W</td>
+                          <td>Th</td>
+                          <td>F</td>
+                          <td>S</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td class="selected">17</td>
+                          <td>18</td>
+                          <td>19</td>
+                        </tr>
+                        <tr>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                        </tr>
+                        <tr>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- EACH IN ITS OWN ROW-->
+                <div class="row">
+                  <div class="col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0">
+                    <img class="img-responsive img-rounded center-block" alt="..." width="585" height="382" src="http://placehold.it/585x382">
+                    <h3>Interesting information</h3>
+                    <p>About the events</p>
+                    <p>Could go here</p>
+                  </div>
+                </div>
+                <!-- EACH IN ITS OWN ROW-->
+              </div>
+            </div>
+            <!-- END sidebar -->
+            <!-- start events -->
+            <div class="col-md-8 event-boxes">
+              <div class="page-header page-header-with-icon">
+                <!-- icon -->
+                <i class="fa fa-calendar-o"></i>
+                <h2>June</h2>
+              </div>
+              {{ range .Data.Pages }} {{ if eq .Type "events"}}
+              <div class="row">
+                <!-- EACH IN ITS OWN ROW-->
+                <div class="col-sm-12 event-box">
+                  <div class="row">
+                    <div class="col-sm-3 col-md-2">
+                      <a class="event-thumbnail" href="{{ .RelPermalink }}" title="Event Title">{{ .Params.month }}
+                        <span>{{ .Params.day }}</span>
+                      </a>
+                    </div>
+                    <div class="col-sm-9 col-md-10 ">
+                      <h3 class="name"><a href="{{ .RelPermalink }}" title="Event Title">{{ .Title }} - {{ .Params.location }}</a></h3>
+                      <p><a href="{{ .RelPermalink }}" title="Event Title">{{ .Params.month }} {{ .Params.day }} - {{ .Params.time }}</a>
+                      </p>
+                      <p>{{ .Description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END ROW-->
+              {{ end }} {{ end }}
+              <div class="page-header page-header-with-icon">
+                <!-- icon -->
+                <i class="fa fa-calendar-o"></i>
+                <h2>July</h2>
+              </div>
+              <div class="row">
+                <!-- EACH IN ITS OWN ROW-->
+                <div class="col-sm-12 event-box">
+                  <div class="row">
+                    <div class="col-sm-3 col-md-2">
+                      <a class="event-thumbnail" href="/events/event/" title="Event Title">July
+                        <span>02</span>
+                      </a>
+                    </div>
+                    <div class="col-sm-9 col-md-10 ">
+                      <h3 class="name"><a href="/events/event/" title="Event Title">Event Title - Event Location</a></h3>
+                      <p><a href="/events/event/" title="Event Title">Event Date - Event Time</a>
+                      </p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum varius ipsum,</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END ROW-->
+              <div class="row">
+                <!-- EACH IN ITS OWN ROW-->
+                <div class="col-sm-12 event-box">
+                  <div class="row">
+                    <div class="col-sm-3 col-md-2">
+                      <a class="event-thumbnail" href="/events/event/" title="Event Title">July
+                        <span>07</span>
+                      </a>
+                    </div>
+                    <div class="col-sm-9 col-md-10 ">
+                      <h3 class="name"><a href="/events/event/" title="Event Title">Event Title - Event Location</a></h3>
+                      <p><a href="/events/event/" title="Event Title">Event Date - Event Time</a>
+                      </p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum varius ipsum,</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END ROW-->
+            </div>
+            <!-- .event-boxes -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #scroll to top -->
+    <div class='fade' id='scroll-to-top'>
+      <i class='fa fa-chevron-up'></i>
+    </div>
+    <!-- / #scroll to top -->
+  </div>
+  <!-- / #main -->
+  {{ partial "footer.html" . }}
+  <!-- / #wrapper -->
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>
